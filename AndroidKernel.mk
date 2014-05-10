@@ -79,6 +79,11 @@ ifeq "$(H_PROJECT)" "y"
 	else
 		DTS_FILES = $(wildcard $(TOP)/kernel/arch/arm/boot/dts/msm8974/$(DTS_NAME)-sec-hlte-*.dts)
 	endif
+	ifeq "$(LOCALE_JPN)" "y"
+		DTS_FILES = $(wildcard $(TOP)/kernel/arch/arm/boot/dts/msm8974/$(DTS_NAME)-sec-hltejpn*.dts)
+	else
+		DTS_FILES = $(wildcard $(TOP)/kernel/arch/arm/boot/dts/msm8974/$(DTS_NAME)-sec-hlte-*.dts)
+	endif
 endif
 ifeq "$(F_PROJECT)" "y"
 		DTS_FILES = $(wildcard $(TOP)/kernel/arch/arm/boot/dts/msm8974/$(DTS_NAME)-sec-fltekor*.dts)
