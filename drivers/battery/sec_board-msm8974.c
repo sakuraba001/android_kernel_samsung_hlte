@@ -284,6 +284,10 @@ static sec_bat_adc_table_data_t temp_table[] = {
 };
 #elif defined(CONFIG_MACH_HLTEKDI)
 static sec_bat_adc_table_data_t temp_table[] = {
+	{25844,	900},
+	{26113,	850},
+	{26398,	800},
+	{26764,	750},
 	{27293,	700},
 	{27703,	650},
 	{28203,	600},
