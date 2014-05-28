@@ -1555,6 +1555,10 @@ config SEC_LOCALE_KOR
 config SEC_LOCALE_KOR_H
 	default n
 	bool "Samsung H model KOREA"
+	
+config SEC_LOCALE_JPN
+	default n
+	bool "Samsung model JPN"
 
 config MACH_HLTESKT
 	default n
