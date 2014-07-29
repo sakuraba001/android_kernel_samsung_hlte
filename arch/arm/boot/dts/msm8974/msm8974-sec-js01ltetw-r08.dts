@@ -13,10 +13,10 @@
 /dts-v1/;
 
 /include/ "msm8974-v2.2-sec.dtsi"
-/include/ "msm8974-sec-js01ltejpn-r06.dtsi"
+/include/ "msm8974-sec-js01ltetw-r06.dtsi"
 
 / {
-	model = "Samsung JS01LTE JPN rev0.8";
+	model = "Samsung JS01LTE ZT rev0.8";
 	compatible = "qcom,msm8974-cdp", "qcom,msm8974", "qcom,cdp";
 	/* qcom,msm-id = <126 1 0>; */
 	qcom,msm-id = <0x7E015101 8 0>,
