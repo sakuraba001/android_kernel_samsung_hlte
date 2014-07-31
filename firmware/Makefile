@@ -154,10 +154,13 @@ fw-shipped-$(CONFIG_TOUCHSCREEN_SYNAPTICS_I2C_RMI_G)	+= tsp_synaptics/synaptics_
 fw-shipped-$(CONFIG_TOUCHSCREEN_SYNAPTICS_I2C_RMI_G)	+= tsp_synaptics/synaptics_s5100_k_fhd.fw
 fw-shipped-$(CONFIG_TOUCHSCREEN_SYNAPTICS_I2C_RMI_G)    += tsp_synaptics/synaptics_s5100_k_a2_fhd.fw
 fw-shipped-$(CONFIG_TOUCHSCREEN_SYNAPTICS_I2C_RMI)      += tsp_synaptics/synaptics_s5050_h.fw
+fw-shipped-$(CONFIG_TOUCHSCREEN_SYNAPTICS_I2C_RMI)      += tsp_synaptics/synaptics_s5000.fw
 fw-shipped-$(CONFIG_TOUCHSCREEN_SYNAPTICS_I2C_RMI)	+= tsp_synaptics/synaptics_s5707.fw
 fw-shipped-$(CONFIG_TOUCHSCREEN_SYNAPTICS_I2C_RMI)	+= tsp_synaptics/synaptics_s5708.fw
 fw-shipped-$(CONFIG_TOUCHSCREEN_SYNAPTICS_I2C_RMI_S5000) += tsp_synaptics/synaptics_b0_5_1.fw
 fw-shipped-$(CONFIG_TOUCHSCREEN_SYNAPTICS_I2C_RMI_S5000) += tsp_synaptics/synaptics_b0_5_1_fac.fw
+fw-shipped-$(CONFIG_TOUCHSCREEN_SYNAPTICS_I2C_RMI_S5000) += tsp_synaptics/synaptics_js_b0_5_1.fw
+fw-shipped-$(CONFIG_TOUCHSCREEN_SYNAPTICS_I2C_RMI_S5000) += tsp_synaptics/synaptics_js_b0_5_1_fac.fw
 fw-shipped-$(CONFIG_TOUCHSCREEN_SYNAPTICS_I2C_RMI)      += tsp_synaptics/synaptics_s5050_f.fw
 
 fw-shipped-$(CONFIG_TOUCHSCREEN_ATMEL_MXT1664S) += tsp_atmel/mXT1664S_v.fw
@@ -165,6 +168,7 @@ fw-shipped-$(CONFIG_TOUCHSCREEN_ATMEL_MXT1664S) += tsp_atmel/mXT1664S_n.fw
 fw-shipped-$(CONFIG_TOUCHSCREEN_ATMEL_MXT1188S) += tsp_atmel/mXT1188S.fw
 
 fw-shipped-$(CONFIG_KEYBOARD_CYPRESS_TOUCHKEY_H) += tkey/hlte_cypress_tkey.fw
+fw-shipped-$(CONFIG_KEYBOARD_CYPRESS_TOUCHKEY_H) += tkey/hltejs01_cypress_tkey.fw
 fw-shipped-$(CONFIG_KEYBOARD_CYPRESS_TOUCHKEY) += tkey/semco_cypress_tkey.fw
 fw-shipped-$(CONFIG_KEYBOARD_CYPRESS_TOUCHKEY) += tkey/semco02_cypress_tkey.fw
 fw-shipped-$(CONFIG_KEYBOARD_CYPRESS_TOUCHKEY) += tkey/dtech_cypress_tkey.fw

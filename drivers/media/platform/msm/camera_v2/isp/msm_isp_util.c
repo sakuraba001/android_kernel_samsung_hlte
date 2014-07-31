@@ -357,9 +357,6 @@ int msm_isp_cfg_pix(struct vfe_device *vfe_dev,
 		return rc;
 	}
 
-	vfe_dev->axi_data.src_info[VFE_PIX_0].input_format =
-		input_cfg->d.pix_cfg.input_format;
-
 	vfe_dev->hw_info->vfe_ops.core_ops.cfg_camif(
 		vfe_dev, &input_cfg->d.pix_cfg);
 	return rc;
@@ -379,6 +376,13 @@ int msm_isp_cfg_rdi(struct vfe_device *vfe_dev,
 		input_cfg->input_pix_clk;
 	vfe_dev->hw_info->vfe_ops.core_ops.cfg_rdi_reg(
 		vfe_dev, &input_cfg->d.rdi_cfg, input_cfg->input_src);
+
+	rc = msm_isp_set_clk_rate(vfe_dev,
+		&vfe_dev->axi_data.src_info[input_cfg->input_src].pixel_clock);
+	if (rc < 0) {
+		pr_err("%s: clock set rate failed\n", __func__);
+		return rc;
+	}
 	return rc;
 }
 
