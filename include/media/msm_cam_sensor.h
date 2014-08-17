@@ -74,6 +74,7 @@ enum msm_camera_i2c_data_type {
 	MSM_CAMERA_I2C_SET_WORD_MASK,
 	MSM_CAMERA_I2C_UNSET_WORD_MASK,
 	MSM_CAMERA_I2C_SET_BYTE_WRITE_MASK_DATA,
+	MSM_CAMERA_I2C_BURST_DATA,
 	MSM_CAMERA_I2C_DATA_TYPE_MAX,
 };
 
@@ -411,8 +412,13 @@ enum eeprom_cfg_type_t {
 	CFG_EEPROM_GET_INFO,
 	CFG_EEPROM_GET_CAL_DATA,
 	CFG_EEPROM_READ_CAL_DATA,
+	CFG_EEPROM_READ_DATA,
+	CFG_EEPROM_READ_COMPRESSED_DATA,
 	CFG_EEPROM_WRITE_DATA,
-	CFG_EEPROM_GET_MM_INFO,
+	CFG_EEPROM_GET_ERASESIZE,
+	CFG_EEPROM_ERASE,
+	CFG_EEPROM_POWER_ON,
+	CFG_EEPROM_POWER_OFF,
 };
 
 struct eeprom_get_t {
@@ -422,11 +428,16 @@ struct eeprom_get_t {
 struct eeprom_read_t {
 	uint8_t *dbuffer;
 	uint32_t num_bytes;
+	uint32_t addr;
+	uint32_t comp_size;
 };
 
 struct eeprom_write_t {
 	uint8_t *dbuffer;
 	uint32_t num_bytes;
+	uint32_t addr;
+	uint32_t *write_size;
+	uint8_t compress;
 };
 
 struct eeprom_get_mm_t {
@@ -443,7 +454,7 @@ struct msm_eeprom_cfg_data {
 		struct eeprom_get_t get_data;
 		struct eeprom_read_t read_data;
 		struct eeprom_write_t write_data;
-		struct eeprom_get_mm_t get_mm_data;
+		struct eeprom_erase_t erase_data;
 	} cfg;
 };
 
@@ -486,6 +497,8 @@ enum msm_actuator_cfg_type_t {
 enum actuator_type {
 	ACTUATOR_VCM,
 	ACTUATOR_PIEZO,
+	ACTUATOR_HALL_EFFECT,
+	ACTUATOR_HVCM,
 };
 
 enum msm_actuator_data_type {
