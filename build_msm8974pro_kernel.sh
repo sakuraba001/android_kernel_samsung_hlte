@@ -241,7 +241,6 @@ SECFUNC_PRINT_HELP()
         echo "  klte_tmo"
         echo "  klte_vzw"
         echo "  klte_usc"
-        echo "  klte kdi"
         echo -e '\E[0m'
 }
 
