@@ -118,4 +118,3 @@ module_exit ( smt113J_tuner_end );
 MODULE_AUTHOR("Samsung");
 MODULE_DESCRIPTION("MM Tuner Driver");
 MODULE_LICENSE("GPL v2");
-

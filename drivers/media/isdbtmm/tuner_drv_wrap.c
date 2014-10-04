@@ -354,4 +354,3 @@ void tuner_drv_gpio_config_poweroff( void )
 	
 	return;
 }
-

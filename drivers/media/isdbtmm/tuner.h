@@ -68,4 +68,3 @@ extern int smt113J_tuner_SpiThreadStart ( void );
 
 
 #endif /* _TUNER_DRV_H */
-
