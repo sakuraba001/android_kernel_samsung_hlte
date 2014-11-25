@@ -163,7 +163,7 @@ static void __iomem *virt_mmss_gp1_base;
 #define HWIO_GP_NS_REG_ADDR ((void __iomem *)(virt_mmss_gp1_base + 0xc))        //MMSS_CC_GP1_N
 #define HWIO_GP_D_REG_ADDR ((void __iomem *)(virt_mmss_gp1_base + 0x10))        //MMSS_CC_GP1_D
 
-#if defined(CONFIG_MACH_HLTEDCM) || defined(CONFIG_MACH_HLTEKDI) || defined(CONFIG_MACH_JS01LTEDCM)
+#if defined(CONFIG_MACH_HLTEDCM) || defined(CONFIG_MACH_HLTEKDI) || defined(CONFIG_MACH_JS01LTEDCM) || defined (CONFIG_MACH_HLTEEUR)
         #define HWIO_CAMSS_GP1_CBCR_ADDR ((void __iomem *)(virt_mmss_gp1_base - 0x4))   //MMSS_CC_CAMSS_GP3_CBCR
 #else
         #define HWIO_CAMSS_GP1_CBCR_ADDR ((void __iomem *)(virt_mmss_gp1_base + 0x24))  //MMSS_CC_CAMSS_GP1_CBCR

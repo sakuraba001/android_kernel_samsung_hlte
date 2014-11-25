@@ -178,7 +178,7 @@ static int32_t ImmVibeSPI_ForceOut_AmpEnable(u_int8_t nActuatorIndex)
 					VIBRATION_ON);
 			} else {	//AP PWM
 #if defined(CONFIG_MACH_HLTEDCM) || defined(CONFIG_MACH_HLTEKDI) || \
-	defined(CONFIG_MACH_JS01LTEDCM) || defined(CONFIG_MACH_JS01LTESBM)
+	defined(CONFIG_MACH_JS01LTEDCM) || defined(CONFIG_MACH_JS01LTESBM) || defined(CONFIG_MACH_HLTEEUR)
 				gpio_tlmm_config(GPIO_CFG(vibrator_drvdata.vib_pwm_gpio,\
 					2, GPIO_CFG_OUTPUT, GPIO_CFG_PULL_DOWN, \
 					GPIO_CFG_2MA), GPIO_CFG_ENABLE);
@@ -281,7 +281,7 @@ int vib_config_pwm_device(void)
 	if(vibrator_drvdata.pwm_dev == NULL){
 	//u32	pwm_period_us, duty_us;
 #if defined(CONFIG_MACH_HLTEDCM) || defined(CONFIG_MACH_HLTEKDI) || \
-	defined(CONFIG_MACH_JS01LTEDCM) || defined(CONFIG_MACH_JS01LTESBM)
+	defined(CONFIG_MACH_JS01LTEDCM) || defined(CONFIG_MACH_JS01LTESBM) || defined(CONFIG_MACH_HLTEEUR)
 	vibrator_drvdata.pwm_dev = pwm_request(0,"lpg_3"); // 0 index for LPG3 channel. 
 #else
 	vibrator_drvdata.pwm_dev = pwm_request(0,"lpg_1"); // 0 index for LPG1 channel. 

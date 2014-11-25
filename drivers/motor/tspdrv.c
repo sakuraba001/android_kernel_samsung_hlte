@@ -357,7 +357,7 @@ static int tspdrv_parse_dt(struct platform_device *pdev)
 	struct device_node *np = pdev->dev.of_node;
 	int rc;
 
-#if defined(CONFIG_MACH_HLTEDCM) || defined(CONFIG_MACH_HLTEKDI) || defined (CONFIG_MACH_JS01LTEDCM)
+#if defined(CONFIG_MACH_HLTEDCM) || defined(CONFIG_MACH_HLTEKDI) || defined (CONFIG_MACH_JS01LTEDCM) || defined(CONFIG_MACH_HLTEEUR)
 	vibrator_drvdata.vib_pwm_gpio = of_get_named_gpio(np, "samsung,pmic_vib_pwm_jpn", 0);
 #else
 	vibrator_drvdata.vib_pwm_gpio = of_get_named_gpio(np, "samsung,pmic_vib_pwm", 0);
@@ -575,7 +575,7 @@ static __devinit int tspdrv_probe(struct platform_device *pdev)
 	if(rc)
 		return rc;
 
-#if defined(CONFIG_MACH_HLTEDCM) || defined(CONFIG_MACH_HLTEKDI) || defined(CONFIG_MACH_JS01LTEDCM)
+#if defined(CONFIG_MACH_HLTEDCM) || defined(CONFIG_MACH_HLTEKDI) || defined(CONFIG_MACH_JS01LTEDCM) || defined(CONFIG_MACH_HLTEEUR)
 	virt_mmss_gp1_base = ioremap(MSM_MMSS_GP3_BASE,0x28);
 #else			
 	virt_mmss_gp1_base = ioremap(MSM_MMSS_GP1_BASE,0x28);

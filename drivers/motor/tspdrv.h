@@ -99,7 +99,7 @@ int32_t g_nforce_32;
 #if defined(CONFIG_MACH_KS01SKT) \
 	   || defined(CONFIG_MACH_KS01KTT) || defined(CONFIG_MACH_KS01LGT) \
 	   || defined(CONFIG_MACH_JACTIVESKT) || defined(CONFIG_MACH_HLTEDCM) \
-	   || defined(CONFIG_MACH_HLTEKDI)
+	   || defined(CONFIG_MACH_HLTEKDI) || defined (CONFIG_MACH_HLTEEUR)
 #define MOTOR_STRENGTH			94/*MOTOR_STRENGTH 94 %*/
 #elif defined(CONFIG_MACH_LT03EUR) || defined(CONFIG_MACH_LT03SKT)\
 	|| defined(CONFIG_MACH_LT03KTT)	|| defined(CONFIG_MACH_LT03LGT) || defined(CONFIG_MACH_PICASSO_LTE)
@@ -113,12 +113,12 @@ int32_t g_nforce_32;
 #endif
 
 
-#if defined (CONFIG_MACH_HLTESPR) || defined (CONFIG_MACH_HLTEEUR) || defined(CONFIG_SEC_LOCALE_KOR_H) || defined (CONFIG_MACH_HLTETMO) || defined(CONFIG_MACH_H3GDUOS) || defined(CONFIG_MACH_HLTEATT)
+#if defined (CONFIG_MACH_HLTESPR) || defined(CONFIG_SEC_LOCALE_KOR_H) || defined (CONFIG_MACH_HLTETMO) || defined(CONFIG_MACH_H3GDUOS) || defined(CONFIG_MACH_HLTEATT)
 	#define GP_CLK_M_DEFAULT                        3
 	#define GP_CLK_N_DEFAULT                        138
 	#define GP_CLK_D_DEFAULT                        69  /* 50% duty cycle	*/
 	#define IMM_PWM_MULTIPLIER			137
-#elif defined (CONFIG_MACH_HLTEDCM) || defined (CONFIG_MACH_HLTEKDI) || defined (CONFIG_MACH_JS01LTEDCM) || defined (CONFIG_MACH_JS01LTESBM)
+#elif defined (CONFIG_MACH_HLTEDCM) || defined (CONFIG_MACH_HLTEKDI) || defined (CONFIG_MACH_JS01LTEDCM) || defined (CONFIG_MACH_JS01LTESBM) || defined (CONFIG_MACH_HLTEEUR)
 	#define GP_CLK_M_DEFAULT			2
 	#define GP_CLK_N_DEFAULT			92
 	#define GP_CLK_D_DEFAULT			46  /* 50% duty cycle */
@@ -191,7 +191,7 @@ static void __iomem *virt_mmss_gp1_base;
 #define HWIO_GP_D_REG_ADDR ((void __iomem *)(virt_mmss_gp1_base + 0x10))	//MMSS_CC_GP1_D
 
 #if defined(CONFIG_MACH_HLTEDCM) || defined(CONFIG_MACH_HLTEKDI) || \
-	defined(CONFIG_MACH_JS01LTEDCM) || defined(CONFIG_MACH_JS01LTESBM)
+	defined(CONFIG_MACH_JS01LTEDCM) || defined(CONFIG_MACH_JS01LTESBM) || defined (CONFIG_MACH_HLTEEUR)
 	#define HWIO_CAMSS_GP1_CBCR_ADDR ((void __iomem *)(virt_mmss_gp1_base - 0x4))	//MMSS_CC_CAMSS_GP3_CBCR
 #else
 	#define HWIO_CAMSS_GP1_CBCR_ADDR ((void __iomem *)(virt_mmss_gp1_base + 0x24))	//MMSS_CC_CAMSS_GP1_CBCR
