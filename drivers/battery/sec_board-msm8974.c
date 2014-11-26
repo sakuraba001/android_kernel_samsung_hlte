@@ -57,7 +57,7 @@ static struct battery_data_t samsung_battery_data[] = {
 		.RCOMP_charging = 0x8A,
 		.temp_cohot = -1025,
 		.temp_cocold = -3675,
-#elif defined(CONFIG_MACH_HLTEKDI)
+#elif defined(CONFIG_MACH_HLTEKDI) || defined(CONFIG_MACH_HLTEEUR)
 		.RCOMP0 = 0x73,
 		.RCOMP_charging = 0x84,
 		.temp_cohot = -1025,
@@ -67,11 +67,11 @@ static struct battery_data_t samsung_battery_data[] = {
 		.RCOMP_charging = 0x80,
 		.temp_cohot = -700,
 		.temp_cocold = -4875,
-#elif defined(CONFIG_MACH_HLTEEUR)
+/*#elif defined(CONFIG_MACH_HLTEEUR)
 		.RCOMP0 = 0x62,
 		.RCOMP_charging = 0x7C,
 		.temp_cohot = -1000,
-		.temp_cocold = -4350,
+		.temp_cocold = -4350,*/
 #elif defined(CONFIG_MACH_FLTEEUR) || defined(CONFIG_MACH_FLTESKT)
 		.RCOMP0 = 0x75,
 		.RCOMP_charging = 0x70,
@@ -131,7 +131,7 @@ static struct battery_data_t samsung_battery_data[] = {
 #define CAPACITY_MIN			0
 #elif defined(CONFIG_MACH_HLTESKT) || defined(CONFIG_MACH_HLTEKTT) || \
 	defined(CONFIG_MACH_HLTELGT) || defined(CONFIG_MACH_HLTEDCM) || \
-	defined(CONFIG_MACH_HLTEKDI)
+	defined(CONFIG_MACH_HLTEKDI) || defined(CONFIG_MACH_HLTEEUR)
 #define CAPACITY_MAX			980
 #define CAPACITY_MAX_MARGIN	50
 #define CAPACITY_MIN			-7
@@ -302,7 +302,7 @@ static sec_bat_adc_table_data_t temp_table[] = {
 	{41224,	-150},
 	{41704,	-200},
 };
-#elif defined(CONFIG_MACH_HLTEKDI)
+#elif defined(CONFIG_MACH_HLTEKDI) || defined(CONFIG_MACH_HLTEEUR)
 static sec_bat_adc_table_data_t temp_table[] = {
 	{27293,	700},
 	{27703,	650},
@@ -556,7 +556,7 @@ static sec_bat_adc_table_data_t temp_table[] = {
 #define TEMP_LOW_THRESHOLD_LPM	 -45
 #define TEMP_LOW_RECOVERY_LPM	 -5
 
-#elif defined(CONFIG_MACH_HLTEKDI)
+#elif defined(CONFIG_MACH_HLTEKDI) || defined(CONFIG_MACH_HLTEEUR)
 #define TEMP_HIGH_THRESHOLD_EVENT	 660
 #define TEMP_HIGH_RECOVERY_EVENT	 420
 #define TEMP_LOW_THRESHOLD_EVENT	  -50
@@ -612,7 +612,7 @@ static sec_bat_adc_table_data_t temp_table[] = {
 #define TEMP_LOW_THRESHOLD_LPM      -50
 #define TEMP_LOW_RECOVERY_LPM         0
 
-#elif defined(CONFIG_MACH_HLTEEUR) || defined(CONFIG_MACH_H3G_CHN_CMCC)
+#elif defined(CONFIG_MACH_H3G_CHN_CMCC)
 #define TEMP_HIGH_THRESHOLD_EVENT	600
 #define TEMP_HIGH_RECOVERY_EVENT	460
 #define TEMP_LOW_THRESHOLD_EVENT	-45
